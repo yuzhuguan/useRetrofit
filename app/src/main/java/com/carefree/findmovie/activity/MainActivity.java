@@ -58,8 +58,8 @@ public class MainActivity extends AppCompatActivity {
 
                         @Override
                         public boolean areItemsTheSame(int oldItemPosition, int newItemPosition) {
-                            return (mData.get(oldItemPosition)).getId() ==
-                                    movies.get(newItemPosition).getId();
+                            return (mData.get(oldItemPosition)).getId()
+                                    == movies.get(newItemPosition).getId();
                         }
 
                         @Override
@@ -92,7 +92,9 @@ public class MainActivity extends AppCompatActivity {
             holder.data.setText(mData.get(position).getReleaseDate());
             holder.movieDescription.setText(mData.get(position).getOverview());
             holder.rating.setText(mData.get(position).getVoteAverage().toString());
-            Glide.with(getApplicationContext()).load(ApiClient.IMAGE + mData.get(position).getBackdropPath()).into(holder.poster_path);
+            Glide.with(getApplicationContext())
+                    .load(ApiClient.IMAGE + mData.get(position).getBackdropPath())
+                    .into(holder.posterPath);
         }
 
         @Override
@@ -106,16 +108,16 @@ public class MainActivity extends AppCompatActivity {
             TextView data;
             TextView movieDescription;
             TextView rating;
-            ImageView poster_path;
+            ImageView posterPath;
 
-            public MovieHolder(View v) {
+            MovieHolder(View v) {
                 super(v);
                 moviesLayout = v.findViewById(R.id.movies_layout);
                 movieTitle = v.findViewById(R.id.title);
                 data = v.findViewById(R.id.subtitle);
                 movieDescription = v.findViewById(R.id.description);
                 rating = v.findViewById(R.id.rating);
-                poster_path = v.findViewById(R.id.backdrop_path);
+                posterPath = v.findViewById(R.id.backdrop_path);
             }
         }
     }

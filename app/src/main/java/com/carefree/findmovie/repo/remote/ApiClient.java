@@ -12,8 +12,11 @@ public class ApiClient {
     public static final String IMAGE = "https://image.tmdb.org/t/p/w300";
     private static Retrofit retrofit = null;
 
-    public static Retrofit getClient(){
-        if(retrofit == null){
+    private ApiClient() {
+    }
+
+    public static Retrofit getClient() {
+        if (retrofit == null) {
             retrofit = new Retrofit.Builder()
                     .baseUrl(BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create())

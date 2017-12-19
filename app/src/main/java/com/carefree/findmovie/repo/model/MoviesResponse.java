@@ -3,11 +3,8 @@ package com.carefree.findmovie.repo.model;
 /**
  * Created by CoderF1 on 2017/12/18.
  */
-
 import com.google.gson.annotations.SerializedName;
-
 import java.util.List;
-
 
 public class MoviesResponse {
     @SerializedName("page")

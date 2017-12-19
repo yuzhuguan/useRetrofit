@@ -39,8 +39,10 @@ public class Movie {
     @SerializedName("vote_average")
     private Double voteAverage;
 
-    public Movie(String posterPath, boolean adult, String overview, String releaseDate, List<Integer> genreIds, Integer id,
-                 String originalTitle, String originalLanguage, String title, String backdropPath, Double popularity,
+    public Movie(String posterPath, boolean adult, String overview,
+                 String releaseDate, List<Integer> genreIds, Integer id,
+                 String originalTitle, String originalLanguage, String title,
+                 String backdropPath, Double popularity,
                  Integer voteCount, Boolean video, Double voteAverage) {
         this.posterPath = posterPath;
         this.adult = adult;
@@ -172,10 +174,15 @@ public class Movie {
 
     @Override
     public boolean equals(Object obj) {
-        if(obj == null || ! (obj instanceof Movie)){
+        if (obj == null || !(obj instanceof Movie)) {
             return false;
         }
         Movie movie = (Movie) obj;
         return this.getId() == movie.getId();
+    }
+
+    @Override
+    public int hashCode() {
+        return this.getId();
     }
 }
