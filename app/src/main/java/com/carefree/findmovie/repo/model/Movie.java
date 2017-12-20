@@ -1,13 +1,13 @@
 package com.carefree.findmovie.repo.model;
 
+import com.google.gson.annotations.SerializedName;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by CoderF1 on 2017/12/18.
  */
-import com.google.gson.annotations.SerializedName;
-
-import java.util.ArrayList;
 
 public class Movie {
     @SerializedName("poster_path")
@@ -178,7 +178,7 @@ public class Movie {
             return false;
         }
         Movie movie = (Movie) obj;
-        return this.getId() == movie.getId();
+        return this.getId().intValue() == movie.getId().intValue();
     }
 
     @Override

@@ -58,8 +58,8 @@ public class MainActivity extends AppCompatActivity {
 
                         @Override
                         public boolean areItemsTheSame(int oldItemPosition, int newItemPosition) {
-                            return (mData.get(oldItemPosition)).getId()
-                                    == movies.get(newItemPosition).getId();
+                            return (mData.get(oldItemPosition)).getId().intValue()
+                                    == movies.get(newItemPosition).getId().intValue();
                         }
 
                         @Override
