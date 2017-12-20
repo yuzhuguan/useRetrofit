@@ -1,12 +1,17 @@
 # useRetrofit
 使用ViewModel, LiveData, Retrofit , Gson测试TMDb api, 练手练手30分钟写完。
 
-## 尝试 checkstyle
-代码diff ： https://github.com/yuzhuguan/useRetrofit/commit/d3d0a95e35022c8b9caaa18e6901950f759e6ca0
-步骤：
-1. Android studio安装插件CheckStyle-IDEA
-2. 修改app gradle 查考上面的diff，主要是checkstyle.xml， 当然也可以找找华为，阿里的checkstyle 
-3. 运行gradle checkstyle (win: gradlew.bat checkstyle, linux: ./gradlew checkstyle)
+## Code Analysis tools
+![](check-task-diagram.png)
+
+1. PMD: It finds common programming flaws like unused variables, empty catch blocks, unnecessary object creation, and so forth. See this project's PMD ruleset.
+./gradlew pmd
+
+2. Findbugs: This tool uses static analysis to find bugs in Java code. Unlike PMD, it uses compiled Java bytecode instead of source code.
+./gradlew findbugs
+
+3. Checkstyle: It ensures that the code style follows our Android code guidelines. See our checkstyle config file.
+./gradlew checkstyle
 
 # 项目截图
 ![](screenshot.png)
